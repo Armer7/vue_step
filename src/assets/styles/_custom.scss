@@ -1,0 +1,84 @@
+
+/*My pages color*/
+
+$grey-lighten-e2:  #e5e5e5;
+$green-darken-2a: #2FC4B2;
+$brown-darken-1a: #6D6E41;
+$my-social-colors: #c5d8bb;
+$BodyBackgroundColor: #E5E5E5;
+$navTogglerBgColor: #fff;
+$navAndFuterBgColor: #fff;
+$infoBgColor: #fff;
+$navLinkHoverColor: #e5e5e5;
+$mainBgColor: #FAFAFA;
+$btnTextColor: #fff;
+
+// Info footer after hit sales
+
+$InfoFooterImageColor: #fff;
+$InfoFooterImageTextTitle: #363636;
+$InfoFooterImageText: $green-darken-2a;
+$InfoFooterImageDash: #686868;
+
+$FooterInfoBG: $my-social-colors;
+$FooterInfoHead: #363636;
+
+// Modal Window
+
+$ModalBG: #e5e5e5;
+$ModalBackArrowTxt: #363636;
+$ModalH1Text: #363636;
+$ModalH2Text: #afafaf;
+$ModalPriceText: #363636;
+$ModalValueLabel: #363636;
+$ModalValue: #363636;
+$ModalH3Text: #6d6e41;
+$ModalText: #363636;
+$ModalSelectBG: #f0f0f0;
+
+// Sales
+
+$textColorHeader: #fff;
+$bagSaleBG: #E5E5E5;
+$bagSaleText: #363636;
+$breadcrumb: #363636;
+$subMenuAndSelect: #363636;
+$filter: #363636;
+$sortedBG: #F8F8F8;
+$salesMain: #fcfcfc;
+$searchSalesLine: #E1E1E1;
+
+// Contact
+$contactBG: #fff;
+$textContactBG: #fcfcfc;
+$textContact: #4b4b4b;
+$sendBG: #c5d8bb;
+$sendTextBG: #fff;
+$sendTextHead: #99d8d0;
+$sendText: #363636;
+
+$formText: #363636;
+$formBorder: #363636;
+
+
+
+
+/*Mixin color to MDB*/
+
+$mdb-colors-1: () !default;
+$mdb-colors-1: map-merge(
+                        (
+                                "grey": (
+                                        "lighten-e2":  $grey-lighten-e2
+                        ),
+                                "green": (
+                                        "lighten-2a":  $green-darken-2a
+                                ),
+                                "brown": (
+                                        "darken-1a":  $brown-darken-1a
+                                ),
+
+                        ),
+        $mdb-colors-1
+);
+

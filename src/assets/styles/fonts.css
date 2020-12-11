@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Futura PT';
+    src: local('Futura PT Medium'), local('futurapt-medium'),
+        url('~@/assets/fonts/futurapt/futurapt-medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: local('Futura PT Book'), local('futurapt-book'),
+        url('~@/assets/fonts/futurapt/futurapt-book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: local('Futura PT Light'), local('futurapt-light'),
+        url('~@/assets/fonts/futurapt/futurapt-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: local('Futura PT Bold'), local('futurapt-bold'),
+        url('~@/assets/fonts/futurapt/futurapt-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: local('Futura PT Demi'), local('FuturaPT-Demi'),
+    url('~@/assets/fonts/futurapt/FuturaPT-Demi.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}

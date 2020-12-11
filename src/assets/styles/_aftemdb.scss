@@ -1,0 +1,116 @@
+body{
+  font-family: "Futura PT", Roboto, sans-serif !important;
+  background: $BodyBackgroundColor !important;
+}
+
+.nav-link{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+}
+
+.main{
+  padding:  60px 200px 80px 200px;
+
+}
+
+.breadCrumb {
+  background: $navAndFuterBgColor;
+
+  > div {
+    position: relative;
+    height: 110px;
+    text-align: center;
+
+    > p {
+      margin: 0;
+      line-height: 110px;
+      color: $breadcrumb;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          color: scale_color($breadcrumb, $lightness: 40%);
+        }
+      }
+    }
+  }
+}
+
+.social {
+  font-size: 14px;
+  width: 135px;
+
+  a {
+    margin: 5px 12px;
+
+  }
+
+  i {
+    color: $btnTextColor;
+    transition: 0.35s;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    background-color: $my-social-colors;
+    &:hover {
+      background-color: scale_color($my-social-colors, $lightness: -50%);
+    }
+  }
+
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  .main{
+    padding:  60px 100px 80px 100px !important;
+  }
+}
+@media (max-width: 768px)  {
+  .main{
+    padding:  60px 50px 80px 50px !important;
+  }
+
+  .breadCrumb {
+    > div {
+      height: 80px;
+      > p {
+        line-height: 80px;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+
+  .main{
+    padding:  60px 25px 80px 25px !important;
+  }
+
+
+  .breadCrumb {
+    > div {
+      text-align: left;
+      padding-left: 25px;
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
