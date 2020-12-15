@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import Vuelidate from 'vuelidate'
+import Notifications from "vt-notifications";
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -15,6 +17,8 @@ for (const component in mdbvue) {
 }
 
 Vue.config.productionTip = false;
+Vue.use(Vuelidate);
+Vue.use(Notifications);
 
 firebase.initializeApp({
   apiKey: "AIzaSyBHO8EE18G-FTwzRw-ZVGKAqCig1JbQI9I",

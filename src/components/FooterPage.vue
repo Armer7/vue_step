@@ -3,62 +3,70 @@
   <mdb-footer class = "footer d-flex">
 
     <div
-      class = "d-flex justify-content-md-between text-center flex-md-row flex-column flex-md-wrap flex-nowrap my-auto w-100">
+      class = "d-flex justify-content-center justify-content-md-between text-center flex-md-row flex-column flex-md-wrap flex-nowrap my-auto w-100">
 
 
-      <div class = "pr-xl-2 text-center text-md-left"> <!--d-none d-xl-block-->
-      <router-link
-        tag = "a"
-        to = "/">
-      <img src = "@/assets/image/logo/divin.svg" alt = "DIVIN">
-      </router-link>
+      <div class = "pr-xl-2 text-center text-md-left">
+        <router-link
+          tag = "a"
+          to = "/">
+          <img src = "@/assets/image/logo/divin.svg" alt = "DIVIN">
+        </router-link>
       </div>
-      <div class = "link"><router-link
-        tag = "a"
-        to = "/Catalog"
-        class = "black-text px-lg-2">
+      <div class = "link">
+        <router-link
+          tag = "a"
+          to = "/Catalog"
+          class = "black-text px-lg-2">
           каталог&nbsp;товаров
-        </router-link></div>
-              <div class = "link"><router-link
-                tag = "a"
-                to = "/Delivery"
-                class = "black-text px-lg-2">
+        </router-link>
+      </div>
+      <div class = "link">
+        <router-link
+          tag = "a"
+          to = "/Delivery"
+          class = "black-text px-lg-2">
           доставка&nbsp;и&nbsp;оплата
-        </router-link></div>
-        <div class = "link"><router-link
+        </router-link>
+      </div>
+      <div class = "link">
+        <router-link
           tag = "a"
           to = "/Warranty"
           class = "black-text px-lg-2">
           гарантии
-        </router-link></div>
-        <div class = "link"><router-link
+        </router-link>
+      </div>
+      <div class = "link">
+        <router-link
           tag = "a"
           to = "/Contact"
           class = "black-text px-lg-2">
           контакты
-        </router-link></div>
+        </router-link>
+      </div>
 
-        <div class = "teal-text telephone px-lg-2">
-          +7343999999
-        </div>
+      <div class = "teal-text telephone px-lg-2">
+        +7343999999
+      </div>
 
 
-        <div class = "bodySocial">
-          <div class = "social mx-auto">
+      <div class = "bodySocial">
+        <div class = "social mx-auto">
           <a><i class = "fab fa-instagram"> </i></a>
-        <a><i class = "fab fa-vk"> </i></a>
-        <a><i class = "fab fa-facebook-f"> </i></a>
+          <a><i class = "fab fa-vk"> </i></a>
+          <a><i class = "fab fa-facebook-f"> </i></a>
         </div>
-        </div>
+      </div>
 
-        <div class = "bodyCopy">
-          <div class = "copy black-text mx-auto">
+      <div class = "bodyCopy">
+        <div class = "copy black-text mx-auto">
           Разработка&nbsp;сайта:&nbsp;Armer
         </div>
-        </div>
+      </div>
 
 
-  </div>
+    </div>
   </mdb-footer>
   <!-- Footer -->
 </template>
@@ -113,17 +121,18 @@
     }
 
     .link {
-      transition: 0.35s;
+      height: 30px;
 
       a {
         text-decoration: none;
-      }
-
-      &:hover {
-        background-color: $navLinkHoverColor;
+        padding: 5px 10px;
+        line-height: 30px;
+        transition: 0.35s;
+        &:hover {
+          background-color: $navLinkHoverColor;
+        }
       }
     }
-
 
   }
 

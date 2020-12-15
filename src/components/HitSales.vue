@@ -54,7 +54,6 @@
       let storage = firebase.storage();
       let pathReference = storage.ref('00-Rectangle.png');
       pathReference.getDownloadURL().then(url => {
-        console.log(url);
         this.url= url;
       });
     },

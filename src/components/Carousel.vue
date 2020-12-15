@@ -9,26 +9,28 @@
     indicators
   >
     <template #[i+1] v-for="(pic, i) in items">
-      <mdb-card :key="i"
-                class="card-image cardSlice"
-                :style="'background: url(' + pic.src +
+      <mdb-card
+        :key="i"
+        class="card-image cardSlice"
+        :style="'background: url(' + pic.src +
                 ') no-repeat center;' +
                 '  background-size: cover;'"
-
       >
         <div class="text-white text-left d-flex align-items-center my-auto">
-            <div class="bodyCardSlice">
-              <mdb-card-title tag="p" class="pt-2 headerSlice">{{ pic.title.toUpperCase() }}</mdb-card-title>
-              <p class="textSlice">{{ pic.text }}</p>
-              <router-link
-                tag = "mdb-btn"
-                to = "/Catalog"
-                class = "text-white btnSlice">
-          Перейти к покупкам
-        </router-link>
+          <div class="bodyCardSlice">
+            <mdb-card-title tag="p" class="pt-2 headerSlice">
+              {{ pic.title.toUpperCase() }}
+            </mdb-card-title>
+            <p class="textSlice">{{ pic.text }}</p>
+            <router-link
+              tag = "mdb-btn"
+              to = "/Catalog"
+              class = "text-white btnSlice">
+              Перейти к покупкам
+            </router-link>
 
-            </div>
           </div>
+        </div>
       </mdb-card>
     </template>
   </mdb-carousel>
@@ -90,16 +92,22 @@
             src:
               require(`../assets/image/img/slice5.jpg`)
           }
-        ]
+        ],
       };
     },
-    /*  methods:{
-        titleUppercase: function (value) {
-          return value.toUpperCase()
-        },
-      }*/
   }
-  </script>
+
+  let vh = window.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  })
+
+</script>
 
 <style scoped lang="scss">
 .cardSlice{
@@ -134,6 +142,14 @@
   letter-spacing: 0.05em;
   margin: 20px 0 30px 0;
 }
+
+@media (max-width: 991px) {
+  .cardSlice{
+    height: calc(var(--vh, 1vh) * 100 - 60px);
+    //height: calc(100vh - 60px);
+  }
+}
+
 @media (max-width: 900px) {
   .bodyCardSlice {
 

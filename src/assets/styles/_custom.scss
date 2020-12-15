@@ -47,6 +47,7 @@ $filter: #363636;
 $sortedBG: #F8F8F8;
 $salesMain: #fcfcfc;
 $searchSalesLine: #E1E1E1;
+$filterToggleBG: #fff;
 
 // Contact
 $contactBG: #fff;
@@ -65,7 +66,7 @@ $formBorder: #363636;
 
 /*Mixin color to MDB*/
 
-$mdb-colors-1: () !default;
+/*$mdb-colors-1: () !default;
 $mdb-colors-1: map-merge(
                         (
                                 "grey": (
@@ -80,5 +81,5 @@ $mdb-colors-1: map-merge(
 
                         ),
         $mdb-colors-1
-);
+);*/
 
