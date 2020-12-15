@@ -179,7 +179,7 @@
     </section>
     <notificationGroup group="top">
       <div class="position-fixed d-flex px-4 py-6 align-items-start justify-content-end"
-      style="	top: 105px; right: 0; bottom: 0; left: 0; pointer-events: none; z-index: 10"
+      style="	top: 105px; right: 0; bottom: 0; left: 0; pointer-events: none; z-index: 4"
       >
         <div class="w-100"
         style="max-width: 24rem;">
@@ -396,6 +396,7 @@
     }
 
     .form {
+      z-index: 5;
       .formItem{
         position: relative;
         width: 100%;
@@ -419,6 +420,9 @@
         textarea{
           height: 87px;
           padding-top: 11px;
+        }
+        input, textarea{
+          cursor: default;
         }
         .invalid {
           border: 1px solid red;
@@ -513,7 +517,7 @@
       }
 
       .arrow-bottom{
-        bottom: calc(100% + 30px);
+        //bottom: calc(100% + 30px);
       }
 
 
@@ -542,10 +546,12 @@
         }
       }
 
-      .formItem:hover .arrow-bottom{
-        animation: tooltip-bottom 0.4s ease forwards;
+      .formItem:hover {
+        > .arrow-bottom {
+          bottom: calc(100% + 30px);
+          animation: tooltip-bottom 0.4s ease forwards;
+        }
       }
-
       @-moz-keyframes tooltip-bottom {
         100% {
           opacity: 1;
