@@ -8,6 +8,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "firebase": "^8.1.2",
     "mdbvue": "^6.7.2",

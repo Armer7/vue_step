@@ -2,40 +2,29 @@
   <main class="main mainHitSales">
     <p class="mainHeader">Хиты продаж</p>
     <mdb-row>
-      <mdb-col xl="4" sm="6" class="mb-5">
-       <Card :url="url" @ModalSale="onModalSale" />
-      </mdb-col>
-            <mdb-col xl="4" sm="6" class="mb-5">
-       <Card :url="url"  @ModalSale="onModalSale"/>
-      </mdb-col>
-            <mdb-col xl="4" sm="6" class="mb-5">
-       <Card :url="url"  @ModalSale="onModalSale"/>
-      </mdb-col>
-            <mdb-col xl="4" sm="6" class="mb-5">
-       <Card :url="url"  @ModalSale="onModalSale"/>
-      </mdb-col>
-            <mdb-col xl="4" sm="6" class="mb-5">
-       <Card :url="url" @ModalSale="onModalSale"/>
-      </mdb-col>
-            <mdb-col xl="4" sm="6" class="mb-5">
-       <Card :url="url"  @ModalSale="onModalSale"/>
+      <mdb-col xl="4" sm="6" class="mb-5"
+      v-for="product in productsFirstPage"
+               :key="product.uid"
+      >
+       <Card :productData="product" @ModalSale="onModalSale" />
       </mdb-col>
     </mdb-row>
-    <ModalMoreInfo :relatedIn="relatedIn" @hideModal="offModalSale" />
+    <ModalMoreInfo v-if="modalData.relatedIn" :modalData="modalData" @hideModal="offModalSale" />
   </main>
 </template>
 
 <script>
-  import firebase from 'firebase';
-  import 'firebase/auth';
-  import 'firebase/database';
-  import 'firebase/storage';
+  //import firebase from 'firebase';
+  //import 'firebase/auth';
+  //import 'firebase/database';
+  //import 'firebase/storage';
   import Card from '@/components/Card'
   import ModalMoreInfo from '@/components/ModalMoreInfo';
   import {
     mdbCol,
     mdbRow
   } from 'mdbvue';
+  import {mapActions, mapGetters} from 'vuex';
   export default {
     name: "HitSales",
     components: {
@@ -46,24 +35,38 @@
     },
     data() {
       return {
-        url: "",
-        relatedIn: false,
+        modalData: {
+          relatedIn: false,
+          productDataId: 0,
+        }
       }
     },
-    mounted: function () {
-      let storage = firebase.storage();
+    computed: {
+      ...mapGetters([
+        'productsFirstPage'
+      ])
+    },
+
+    mounted() {
+      /*let storage = firebase.storage();
       let pathReference = storage.ref('00-Rectangle.png');
       pathReference.getDownloadURL().then(url => {
         this.url= url;
-      });
+      });*/
+      this.selectProductsFirstPage()
     },
     methods: {
+      ...mapActions(['selectProductCard' , 'selectProductsFirstPage']),
       onModalSale (data){
-        this.relatedIn = data.relatedIn
+        this.modalData = data;
+        this.selectProductCard(data.productDataId);
+        //this.productDataId = data.productDataId;
+        //this.relatedIn = data.relatedIn
       },
       offModalSale (data){
-        this.relatedIn = data.relatedIn
-      }
+        this.modalData = data;
+      },
+      //...mapActions(['getProductFromApi']),
     }
 
   }

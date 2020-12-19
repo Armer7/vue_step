@@ -33,22 +33,22 @@ export default {
 </script>
 
 <style scoped lang = "scss">
+
 .footerInfo{
   min-height: 407px;
   padding: 60px 310px 60px 200px;
   background: $FooterInfoBG;
-  .bodyCard{
 
-    /*column-width: 590px;*/
+  .bodyCard{
     column-count: 2;
     column-gap: 70px;
-
     color: $FooterInfoHead;
     font-weight: 300;
     font-size: 14px;
     line-height: 130%;
     letter-spacing: 0.05em;
   }
+
   .headText{
     color: $FooterInfoHead;
     font-weight: 500;
@@ -57,6 +57,7 @@ export default {
     letter-spacing: 0.05em;
     max-width: 590px;
   }
+
 }
 
 @media (max-width: 1280px) {
@@ -74,18 +75,19 @@ export default {
     padding: 60px 50px;
   }
 }
+
 @media (max-width: 575px) {
   .footerInfo {
     padding: 25px 25px;
+
     .bodyCard {
-
-      /*column-width: 590px;*/
       column-count: 1;
-
     }
+
     .headText{
       font-size: 28px;
     }
+
   }
 
 }

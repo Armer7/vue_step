@@ -84,45 +84,38 @@
         </div>
       </div>
       <div>
-        <div class="valueSearch">Найдено 6</div>
+        <div class="valueSearch">Найдено {{products.length}}</div>
       </div>
     </div>
     <mdb-row>
-      <mdb-col xl = "4" sm = "6" class = "mb-5">
-        <Card :url = "url" @ModalSale = "onModalSale"/>
-      </mdb-col>
-      <mdb-col xl = "4" sm = "6" class = "mb-5">
-        <Card :url = "url" @ModalSale = "onModalSale"/>
-      </mdb-col>
-      <mdb-col xl = "4" sm = "6" class = "mb-5">
-        <Card :url = "url" @ModalSale = "onModalSale"/>
-      </mdb-col>
-      <mdb-col xl = "4" sm = "6" class = "mb-5">
-        <Card :url = "url" @ModalSale = "onModalSale"/>
-      </mdb-col>
-      <mdb-col xl = "4" sm = "6" class = "mb-5">
-        <Card :url = "url" @ModalSale = "onModalSale"/>
-      </mdb-col>
-      <mdb-col xl = "4" sm = "6" class = "mb-5">
-        <Card :url = "url" @ModalSale = "onModalSale"/>
+      <mdb-col xl="4" sm="6" class="mb-3 mb-md-5"
+               v-for="(product) in products"
+               :key="product.uid"
+      >
+       <Card :productData="product"
+             @ModalSale="onModalSale"
+       />
       </mdb-col>
     </mdb-row>
-    <ModalMoreInfo :relatedIn = "relatedIn" @hideModal = "offModalSale"/>
+    <ModalMoreInfo v-if="modalData.relatedIn"
+                   :modalData="modalData"
+                   @hideModal="offModalSale"
+    />
   </main>
 </template>
 
 <script>
-  import firebase from 'firebase';
-  import 'firebase/auth';
-  import 'firebase/database';
-  import 'firebase/storage';
+  //import firebase from 'firebase';
+  //import 'firebase/auth';
+  //import 'firebase/database';
+  //import 'firebase/storage';
   import Card from '@/components/Card'
   import ModalMoreInfo from '@/components/ModalMoreInfo';
   import {
     mdbCol,
-    mdbRow
+    mdbRow,
   } from 'mdbvue';
-
+  import {mapActions, mapGetters} from 'vuex';
   export default {
     name: "Sales",
     components: {
@@ -133,16 +126,19 @@
     },
     data() {
       return {
-        url: "",
-        relatedIn: false,
+        modalData: {
+          relatedIn: false,
+          productDataId: 0,
+        }
       }
     },
+    computed:{
+      ...mapGetters([
+        'products'
+      ])
+    },
+
     mounted()  {
-      let storage = firebase.storage();
-      let pathReference = storage.ref('00-Rectangle.png');
-      pathReference.getDownloadURL().then(url => {
-        this.url = url;
-      });
 
       // Create a condition that targets viewports at least 513px wide
       const filterMenu = window.matchMedia("(min-width: 513px)");
@@ -161,11 +157,15 @@
       filterMenuHandleTabletChange(filterMenu);
     },
     methods: {
-      onModalSale(data) {
-        this.relatedIn = data.relatedIn
+      ...mapActions(['selectProductCard']),
+      onModalSale (data){
+        this.modalData = data;
+        this.selectProductCard(data.productDataId);
+        //this.productDataId = data.productDataId;
+        //this.relatedIn = data.relatedIn
       },
-      offModalSale(data) {
-        this.relatedIn = data.relatedIn
+      offModalSale (data){
+        this.modalData = data;
       },
       viewToggleFilter() {
         toggleMenuFilter.classList.toggle('activeFilter');
@@ -252,7 +252,7 @@
               width: 152px;
             }
             &:nth-of-type(3){
-              width: 77px;
+              width: 100px;
             }
 
           }
@@ -297,6 +297,9 @@
             appearance: none;
             -moz-appearance: none;
             outline: 0;
+            padding:0 25px 0 0 !important;
+            -webkit-padding-end: 25px !important;
+
           }
 
           &::after {

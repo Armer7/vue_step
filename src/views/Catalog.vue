@@ -10,30 +10,55 @@
           tag = "a"
           to = "/">Главная
         </router-link>/Каталог товаров</p>
-      <div class = "btnSale">
-        <a class = "btn-floating" v-mdb-waves = "{ background: 'rgba(153,216,208,0.5)', center: true }">
+      <div
+        class = "btnSale">
+        <a class = "btn-floating"
+           v-mdb-waves = "{ background: 'rgba(153,216,208,0.5)', center: true }"
+           @click="showModalShopping"
+        >
           <i class = "fas fa-shopping-bag"></i>
         </a>
-        <span class = "counter">5</span>
+        <span v-if="saleCard.length" class = "counter">{{saleCard.length}}</span>
       </div>
     </div>
   </div>
   <Sales />
+  <ModalShopping  :modalShopData="modalShopData" @hideModalShopping="hideModalShopping" />
 </div>
 </template>
-
 <script>
     import {mdbWaves} from "mdbvue";
     import Sales from '@/components/Sales';
+    import {mapGetters} from 'vuex';
+    import ModalShopping from '@/components/ModalShopping'
 
     export default {
       name: "Catalog",
       components: {
-        Sales
+        Sales,
+        ModalShopping
+      },
+      data() {
+        return{
+          modalShopData: {relatedIn: false,}
+        }
       },
       directives: {
         mdbWaves
-      }
+      },
+      computed:{
+        ...mapGetters([
+          'saleCard',
+        ]),
+      },
+      methods: {
+        showModalShopping (){
+          this.modalShopData.relatedIn = !!this.saleCard.length;
+        },
+        hideModalShopping (data){
+          this.modalShopData = data;
+        },
+      },
     }
 </script>
 

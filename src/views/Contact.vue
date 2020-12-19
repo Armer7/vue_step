@@ -221,10 +221,7 @@
   import {mdbBtn, mdbCol, mdbRow, mdbWaves,} from 'mdbvue';
   import {
     required,
-    minLength,
-    helpers,
-    alpha,
-    numeric
+    minLength
   } from 'vuelidate/lib/validators';
 
   const telephone = (value) => (value.match(/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/) || []).length > 0;
@@ -454,7 +451,6 @@
             border-style: solid;
             border-width: 8px 5px 0 5px;
             border-color: #000 transparent transparent transparent;
-            //transform: rotate(45deg);
             position: absolute;
             top: 0;
             bottom: 0;
@@ -476,7 +472,6 @@
         width: 100%;
         height: 50px;
         text-align: center;
-        //margin: 0 auto 0 auto;
         text-transform: none;
         padding: 5px 0 !important;
         margin: 0 !important;
@@ -517,12 +512,12 @@
       }
 
       .arrow-bottom{
-        //bottom: calc(100% + 30px);
+
       }
 
 
       .formItem:hover .arrow-top{
-        /*display: block;*/
+
         animation: tooltip-top 0.4s ease forwards;
       }
 

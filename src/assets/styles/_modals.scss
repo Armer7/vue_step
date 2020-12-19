@@ -1,0 +1,223 @@
+.modal .modal-fluid {
+  min-width: 320px;
+  max-width: 1600px;
+  background-color: $ModalBG;
+
+  .modal-header {
+    border-bottom: none;
+    .close{
+      font-weight: 300;
+      font-size: 80px;
+      line-height: 55px;
+    }
+
+  }
+
+  .modal-title{
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 55px;
+    color: $ModalBackArrowTxt;
+
+  }
+
+  .modal-body{
+    padding: 0 200px 100px 200px;
+
+    .modalH1 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+      color: $ModalH1Text;
+      margin-bottom: 10px;
+    }
+
+    .modalH2 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+      color: $ModalH2Text;
+      margin-bottom: 20px;
+    }
+
+    .modalPrice {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      color: $ModalPriceText;
+      margin-bottom: 20px;
+    }
+
+    .card-body {
+      padding: 0;
+      .btnModalSale {
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        width: 220px;
+        height: 50px;
+        text-transform: none;
+        background-color: $brown-darken-1a !important;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 30px;
+      }
+
+      .modalValueLabel {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: 0.05em;
+        color: $ModalValueLabel;
+        margin-bottom: 10px;
+      }
+      ///////////////////////////////////////////////////////////////////////
+      .modalSelect{
+
+        .selected {
+          position: relative;
+          display: table;
+
+          text-align: left;
+          width: 190px;
+          margin-bottom: 20px;
+
+          .modalValue {
+            box-sizing: border-box;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            -moz-appearance: none;
+            outline: 0;
+            background-color: $ModalSelectBG;
+            border: none;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 130%;
+            letter-spacing: 0.05em;
+            color: $ModalValue;
+            width: 100%;
+            height: 32px;
+            padding:0 30px 0 10px !important;
+            -webkit-padding-end: 30px !important;
+            -webkit-padding-start: 10px !important;
+          }
+
+          &::after {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-style: solid;
+            border-width: 8px 5px 0 5px;
+            border-color: #000 transparent transparent transparent;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 10px;
+            margin: auto;
+            pointer-events: none;
+          }
+
+        }
+
+      }
+
+      .modalH3{
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        color: $ModalH3Text;
+      }
+
+      .modalText {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        color: $ModalText;
+      }
+    }
+
+  }
+
+}
+
+.thumbnails {
+  margin-right: auto;
+  margin-top: 5px;
+  max-width: 300px;
+
+}
+
+.thumbnails .vueperslide {
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  transition: 0.3s ease-in-out;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.thumbnails .vueperslide--active {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  border-color: #000;
+}
+.vueperslides--fixed-height {
+  height: 590px;
+}
+
+
+
+
+//Медиа
+
+@media (max-width: 1635px){
+  .modal .modal-fluid {
+    .modal-body {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+}
+
+@media (max-width: 1380px){
+  .modal .modal-fluid {
+    .modal-body {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+  .vueperslides--fixed-height {
+    height: 490px;
+  }
+}
+
+@media (max-width: 1200px){
+  .vueperslides--fixed-height {
+    height: 400px;
+  }
+}
+
+@media (max-width: 1024px){
+  .modal .modal-fluid {
+    .modal-body {
+      padding-left: 35px;
+      padding-right: 35px;
+    }
+  }
+  .vueperslides--fixed-height {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767px){
+  .vueperslides--fixed-height {
+    height: 450px;
+  }
+}
