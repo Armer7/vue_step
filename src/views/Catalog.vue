@@ -151,9 +151,6 @@
 
 }
 
-
-
-
 @media (max-width: 768px) {
   .catalogBG {
     height: 137px;

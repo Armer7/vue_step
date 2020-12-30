@@ -35,16 +35,11 @@
 <script>
 export default {
   name: 'CardShopping',
-  components: {
-  },
   props:{
     productData:{
       type: Object,
       default: {}
     },
-  },
-  mounted() {
-
   },
   methods:{
 
