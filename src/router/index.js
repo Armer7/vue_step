@@ -21,7 +21,7 @@ const routes = [
     component: () => import('@/views/Catalog.vue')
 
   },
-    {
+  {
     path: '/Delivery',
     name: 'Delivery',
     meta: {
@@ -29,7 +29,7 @@ const routes = [
     },
     component: () => import('@/views/Delivery.vue')
   },
-    {
+  {
     path: '/Warranty',
     name: 'Warranty',
     meta: {
@@ -37,20 +37,28 @@ const routes = [
     },
     component: () => import('@/views/Warranty.vue')
   },
-    {
+  {
     path: '/Contact',
     name: 'Contact',
     meta: {
       layout: "main"
     },
     component: () => import('@/views/Contact.vue')
+  },
+  {
+    path: '*',
+    name: 'notFound',
+    meta: {
+      layout: "main"
+    },
+    component: () => import('@/views/404')
   }
 
 ]
 
 const router = new VueRouter({
   mode: 'history',
-  //base: process.env.BASE_URL,
+  base: process.env.BASE_URL,
   routes,
   scrollBehavior() {
     return {x: 0, y: 0}
