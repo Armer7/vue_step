@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0b99b3"],{3451:function(n,t,e){"use strict";e.r(t);var c=function(){var n=this,t=n.$createElement,e=n._self._c||t;return e("div",{staticClass:"text-center"},[n._v("Гарантии")])},a=[],s={name:"Warranty",components:{}},r=s,o=e("2877"),u=Object(o["a"])(r,c,a,!1,null,"5165cd12",null);t["default"]=u.exports}}]);
+//# sourceMappingURL=chunk-2d0b99b3.0c3d1ab9.js.map
